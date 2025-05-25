@@ -26,5 +26,13 @@ public class Customer {
     public double getTotalSpent() { return totalSpent; }
     public void addToTotalSpent(double amount) { this.totalSpent += amount; }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "ID: %s | Name: %s | Email: %s | Phone: %s | Total Spent: $%.2f",
+                id, name, email, phone, totalSpent
+        );
+    }
+
 
 }

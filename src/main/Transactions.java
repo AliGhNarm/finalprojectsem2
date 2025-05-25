@@ -28,6 +28,8 @@ public class Transactions {
     public Customer getCustomer() { return customer; }
     public double getTotalAmount() { return totalAmount; }
     public LocalDate getDate() { return date; }
+    public String getId() { return id; }
+
 
 
 }
