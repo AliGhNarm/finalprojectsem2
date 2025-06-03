@@ -28,7 +28,7 @@ public class Main {
         System.out.printf("Alex's total spending: $%.2f\n",
                 tracker.getCustomerTotalSpent("C002"));
 
-        SalesTracker.generateDailyReport(LocalDate.now());
+     //   SalesTracker.generateDailyReport(LocalDate.now());
      //   SalesTracker.generateDailyReport(yesterday);  // Yesterday's sales
     //    SalesTracker.generateMonthlyReport(today.getYear(), today.getMonthValue());  // Current month
 
