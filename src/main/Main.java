@@ -22,12 +22,18 @@ public class Main {
         LocalDate yesterday = today.minusDays(1);
 
 
+        List<Customer> customers = tracker.getAllCustomers();
+        ExcelExporter.exportCustomersToCSV(customers, "customers.csv");
+        List<Transactions> transactions = tracker.getAllTransactions();
+        ExcelExporter.exportTransactionsToCSV(transactions, "transactions.csv");
+
         // Correct total spent
         System.out.printf("Alice's total spending: $%.2f\n",
                 tracker.getCustomerTotalSpent("C001")); // Output: $3.98
         System.out.printf("Alex's total spending: $%.2f\n",
                 tracker.getCustomerTotalSpent("C002"));
-
+        ExcelExporter.exportCustomersToCSV(List.of(alice, alex), "customers.csv");
+        ExcelExporter.exportTransactionsToCSV(List.of(t1, t2), "transactions.csv");
      //   SalesTracker.generateDailyReport(LocalDate.now());
      //   SalesTracker.generateDailyReport(yesterday);  // Yesterday's sales
     //    SalesTracker.generateMonthlyReport(today.getYear(), today.getMonthValue());  // Current month

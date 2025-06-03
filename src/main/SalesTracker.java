@@ -78,4 +78,12 @@ public class SalesTracker {
     public List<Transactions> getTransactions() {
         return Collections.unmodifiableList(transactions);
     }
-}
+    private List<Customer> customers = new ArrayList<>();
+
+    public List<Customer> getAllCustomers() {
+        return new ArrayList<>(customers); // Return a copy
+    }
+
+    public List<Transactions> getAllTransactions() {
+        return new ArrayList<>(transactions); // Return a copy
+}}
