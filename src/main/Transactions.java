@@ -29,7 +29,10 @@ public class Transactions {
     public double getTotalAmount() { return totalAmount; }
     public LocalDate getDate() { return date; }
     public String getId() { return id; }
+    public List<Product> getProducts() {return products;
+    }
 
 
 
-}
+
+    }
