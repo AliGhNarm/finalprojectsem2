@@ -34,9 +34,9 @@ public class Main {
                 tracker.getCustomerTotalSpent("C002"));
         ExcelExporter.exportCustomersToCSV(List.of(alice, alex), "customers.csv");
         ExcelExporter.exportTransactionsToCSV(List.of(t1, t2), "transactions.csv");
-     //   SalesTracker.generateDailyReport(LocalDate.now());
-     //   SalesTracker.generateDailyReport(yesterday);  // Yesterday's sales
-    //    SalesTracker.generateMonthlyReport(today.getYear(), today.getMonthValue());  // Current month
+        SalesTracker.generateDailyReport(LocalDate.now());
+        SalesTracker.generateDailyReport(yesterday);  // Yesterday's sales
+        SalesTracker.generateMonthlyReport(today.getYear(), today.getMonthValue());  // Current month
 
     }
 }

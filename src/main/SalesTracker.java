@@ -5,7 +5,7 @@ import java.time.YearMonth;
 import java.util.*;
 
 public class SalesTracker {
-    private List<Transactions> transactions;  // Changed to singular
+    private static List<Transactions> transactions;  // Changed to singular
     private Set<String> recordedTransactionIds;
 
     public SalesTracker() {
@@ -32,7 +32,7 @@ public class SalesTracker {
     }
 
     // Instance method for daily sales
-    public double getDailySales(LocalDate date) {
+    public static double getDailySales(LocalDate date) {
         return transactions.stream()
                 .filter(t -> t.getDate().equals(date))
                 .mapToDouble(Transactions::getTotalAmount)
@@ -48,7 +48,7 @@ public class SalesTracker {
     }
 
     // Get monthly sales
-    public double getMonthlySales(int year, int month) {
+    public static double getMonthlySales(int year, int month) {
         YearMonth targetMonth = YearMonth.of(year, month);
         return transactions.stream()
                 .filter(t -> YearMonth.from(t.getDate()).equals(targetMonth))
@@ -57,7 +57,7 @@ public class SalesTracker {
     }
 
     // Generate daily report (instance version)
-    public void generateDailyReport(LocalDate date) {
+    public static void generateDailyReport(LocalDate date) {
         double total = getDailySales(date);
         System.out.printf("Daily Sales Report (%s): $%.2f\n", date, total);
     }
@@ -69,7 +69,7 @@ public class SalesTracker {
     }
 
     // Generate monthly report
-    public void generateMonthlyReport(int year, int month) {
+    public static void generateMonthlyReport(int year, int month) {
         double total = getMonthlySales(year, month);
         System.out.printf("Monthly Sales Report (%d-%02d): $%.2f\n", year, month, total);
     }
